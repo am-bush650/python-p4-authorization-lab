@@ -11,6 +11,8 @@ db = SQLAlchemy(metadata=metadata)
 class Article(db.Model, SerializerMixin):
     __tablename__ = 'articles'
 
+    #serialize_rules = ('-user.articles',)
+
     id = db.Column(db.Integer, primary_key=True)
     author = db.Column(db.String)
     title = db.Column(db.String)
